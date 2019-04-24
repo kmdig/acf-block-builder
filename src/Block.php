@@ -34,8 +34,26 @@ class Block extends FieldsBuilder
         return parent::build();
     }
 
+    /**
+     * Render for Sage 10
+     *
+     * With Gutenberg it seems that ACF doesn’t save the data before it renders
+     * so we need to highjack the data and return how the view or composer
+     * expects it.
+     *
+     * @param $block []
+     */
     public function render($block)
     {
+        $group = ltrim($block['name'], 'acf/');
+        $data = &$block['data'];
+
+        foreach (array_keys($data) as $field) {
+            if (preg_match("/^field_{$group}/", $field)) {
+                $data[$key = ltrim($field, "field_{$group}_")] = $data[$field];
+            }
+        }
+
         echo \Roots\view("blocks.{$this->name}", $block);
     }
 
