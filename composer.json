@@ -12,7 +12,10 @@
   "autoload": {
     "psr-4": {
       "KnowlerKnows\\AcfBlockBuilder\\": "src/"
-    }
+    },
+    "files": [
+      "src/helpers.php"
+    ]
   },
   "require": {
     "roots/acorn": "dev-master",
