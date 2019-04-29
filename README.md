@@ -1,7 +1,8 @@
-# ACF Block Builder for Sage
+# ACF Block Builder
 
-A wrapper around ACF Builder for registering ACF Blocks.
-Default usage is for Sage 10.
+A light wrapper around ACF Builder for registering ACF Blocks.
+Default usage is for Sage 10, however, other themes are
+supported.
 
 ## Installation
 
