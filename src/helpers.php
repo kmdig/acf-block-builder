@@ -1,6 +1,6 @@
 <?php
 
-namespace KnowlerKnows\AcfBlockBuilder;
+namespace KMDigital\AcfBlockBuilder;
 
 /**
  * Runs wpautop on rich text fields within the block’s data.

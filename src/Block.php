@@ -1,6 +1,6 @@
 <?php
 
-namespace KnowlerKnows\AcfBlockBuilder;
+namespace KMDigital\AcfBlockBuilder;
 
 use StoutLogic\AcfBuilder\FieldsBuilder;
 

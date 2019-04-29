@@ -8,15 +8,15 @@ Default usage is for Sage 10.
 Within your theme or plugin:
 
 ```shell
-$ composer require knowler/acf-block-builder
+$ composer require kmdigital/acf-block-builder
 ```
 
 ## Usage
 
 ```php
-use KnowlerKnows\AcfBlockBuilder\Block;
+use KMDigital\AcfBlockBuilder\Block;
 
-$testimonial = new Block('testimonial')
+$testimonial = new Block('testimonial');
 
 $testimonial
     ->addWysiwyg('content')
@@ -33,6 +33,7 @@ There are additional methods you can use for setting and
 overriding block options:
 
 ```php
+$testimonial
   // Allows you to set a custom title for the block. 
   // Default is the block name/slug titlized.
   ->setTitle('Review')
