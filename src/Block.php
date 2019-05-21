@@ -50,7 +50,7 @@ class Block extends FieldsBuilder
 
         foreach (array_keys($data) as $field) {
             if (preg_match("/^field_{$group}/", $field)) {
-                $data[$key = ltrim($field, "field_{$group}_")] = $data[$field];
+                $data[preg_replace("/field_{$group}_/", '', $field)] = $data[$field];
             }
         }
 
