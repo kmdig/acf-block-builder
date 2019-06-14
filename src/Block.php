@@ -15,8 +15,8 @@ class Block extends FieldsBuilder
 
     public function build()
     {
-        if (function_exists('acf_register_block')) {
-            acf_register_block([
+        if (function_exists('acf_register_block_type')) {
+            acf_register_block_type([
                 'name' => $this->name,
                 'title' => $this->title ?? $this->generateLabel($this->name),
                 'description' => $this->description ?? null,
@@ -28,6 +28,10 @@ class Block extends FieldsBuilder
                         call_user_func($this->renderCallback, $block);
                     }
                     : [$this, 'render'],
+                'align' => $this->align ?? '',
+                'mode' => $this->mode ?? 'preview',
+                'post_types' => $this->postTypes ?? null,
+                'supports' => $this->supports ?? null,
             ]);
         }
 
@@ -95,6 +99,34 @@ class Block extends FieldsBuilder
     public function setKeywords(...$keywords)
     {
         $this->keywords = $keywords;
+
+        return $this;
+    }
+
+    public function setAlign(string $align)
+    {
+        $this->align = $align;
+
+        return $this;
+    }
+
+    public function setMode(string $mode)
+    {
+        $this->mode = $mode;
+
+        return $this;
+    }
+
+    public function setSupports(array $supports)
+    {
+        $this->supports = $supports;
+
+        return $this;
+    }
+
+    public function setPostTypes(...$postTypes)
+    {
+        $this->postTypes = $postTypes;
 
         return $this;
     }
